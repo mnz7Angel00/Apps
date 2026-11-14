@@ -91,3 +91,16 @@ python -m unittest tests.test_prompt_guard -v
 Weights live in the `RULES` table at the top of the module and are plain
 floats. If your corpus has a specific false-positive pattern, add a rule with
 a negative weight or tighten the regex — the scoring engine needs no changes.
+
+---
+
+## prompt_eval/
+
+Banco de testes de prompt com corretor automático. 27 casos em 8 categorias
+(instrução, raciocínio, honestidade, bajulação, injeção, recusa, contexto
+longo, idioma). Veja `prompt_eval/README.md`.
+
+```bash
+python backend/tools/prompt_eval/run_eval.py list
+python backend/tools/prompt_eval/run_eval.py print --only injecao
+```
